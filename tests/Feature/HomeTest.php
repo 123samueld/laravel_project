@@ -2,14 +2,19 @@
 
 namespace Tests\Feature;
 
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class HomeTest extends TestCase
 {
+    /**
+     * A basic feature test example.
+     *
+     * @return void
+     */
     public function test_home_page_text()
     {
-        //Arrange
-
         //Act
         $response = $this->get('/');
         //Assert
@@ -17,14 +22,10 @@ class HomeTest extends TestCase
         $response->assertSeeText('Hello some world');
     }
 
-    public function test_contact_page_connetction()
-    {
-        //Arrange
+    public function test_contact_page_text(){
+        $response= $this->get('/contact');
+        $response->assertSeeText('Contact some world');
+        $response->assertSeeText('Contact some world');
 
-        //Act
-        $response =  $this->get('/contact');
-        //Assert
-        $response->assertSeeText('Contact some world');
-        $response->assertSeeText('Contact some world');
     }
 }
