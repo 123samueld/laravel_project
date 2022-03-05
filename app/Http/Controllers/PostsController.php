@@ -27,10 +27,9 @@ class PostsController extends Controller
         //     }        
         // }
 
-        // dd(DB::getQueryLog());
+        //dd(DB::getQueryLog());
 
-
-        return view('posts.index', ['posts' => BlogPost::all()]);
+        return view('posts.index', ['posts' => BlogPost::all()]);        
     }
 
     /**
